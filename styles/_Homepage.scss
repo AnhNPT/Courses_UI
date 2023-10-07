@@ -1,0 +1,41 @@
+.home_content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 100%;
+    max-width: 490px;
+    .filter_courses {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        .list_filter_courses {
+            display: flex;
+            justify-content: space-between;
+            .filter_courses_item {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                padding: 10px 10px 20px 10px;
+                border-radius: 99px;
+                border: 1px solid transparent;
+                align-items: center;
+                transition: border-color 0.3s ease;
+                &.active {
+                    border-color: $color_secondary;
+                }
+                > span {
+                    min-width: 60px;
+                    text-align: center;
+                }
+                .filter_courses_illust {
+                    border-radius: 99px;
+                    transition: background-color 0.3s ease;
+                    padding: 14px 14px 10px 14px;
+                    &.active {
+                        background-color: $color_secondary;
+                    }
+                }
+            }
+        }
+    }
+}

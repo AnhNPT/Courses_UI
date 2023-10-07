@@ -6,8 +6,8 @@ export default function HomePage() {
     return (
         <>
             <LeftSidebar />
-            {/* <HomePageContent />
-            <RightSidebar /> */}
+            <HomePageContent />
+            <RightSidebar />
         </>
     );
 }

@@ -1,73 +1,47 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Category from "@/public/category";
 import Heart from "@/public/heart";
 import Discover from "@/public/discover";
 import Stars from "@/public/stars";
-import moment from "moment";
 import { FilterCourses } from "@/src/enum/EnumHomePageFilter";
-import { IFilterCourses, IListCourses } from "@/src/interface/PageInterface";
-
-const ListCourses: IListCourses[] = [
-    {
-        img: "/courses-img-1.svg",
-        time: "2023-10-07T15:45:00Z",
-        name: "JavaScript",
-        desc: "Advanced web applications.",
-    },
-    {
-        img: "/courses-img-1.svg",
-        time: "2023-10-07T15:45:00Z",
-        name: "PowerPoint",
-        desc: "Enhance your presentation skills.",
-    },
-    {
-        img: "/courses-img-1.svg",
-        time: "2023-10-07T15:45:00Z",
-        name: "Data Science",
-        desc: "Analyze the data like a pro.",
-    },
-    {
-        img: "/courses-img-1.svg",
-        time: "2023-10-07T15:45:00Z",
-        name: "Digital Design",
-        desc: "Learn the basics of the design.",
-    },
-];
+import { IFilterCourses } from "./HomePageContent";
 
 export default function HomePageContent() {
-    const [activeFilter, setActiveFilter] = useState<number>(0);
+    const [activeFilter, setActiveFilter] = useState<string>(FilterCourses.NEW);
     const FilterCoursesTab: IFilterCourses[] = [
         {
             index: 0,
-            img: <Category fill={activeFilter === 0 ? "#fff" : ""} />,
-            name: "New",
+            img: <Category fill={activeFilter === FilterCourses.NEW ? "#fff" : ""} />,
+            name: FilterCourses.NEW,
         },
         {
             index: 1,
-            img: <Stars fill={activeFilter === 1 ? "#fff" : ""} />,
-            name: "Popular",
+            img: <Stars fill={activeFilter === FilterCourses.POPULAR ? "#fff" : ""} />,
+            name: FilterCourses.POPULAR,
         },
         {
             index: 2,
-            img: <Heart fill={activeFilter === 2 ? "#fff" : ""} />,
-            name: "Free",
+            img: <Heart fill={activeFilter === FilterCourses.FREE ? "#fff" : ""} />,
+            name: FilterCourses.FREE,
         },
         {
             index: 3,
-            img: <Discover fill={activeFilter === 3 ? "#fff" : ""} />,
-            name: "Pro",
+            img: <Discover fill={activeFilter === FilterCourses.PRO ? "#fff" : ""} />,
+            name: FilterCourses.PRO,
         },
     ];
-
     const [filterCourses, setFilterCourses] = useState(FilterCoursesTab[0]);
 
     const handleSelectFilterCourses = (item: IFilterCourses) => () => {
         setFilterCourses(item);
-        setActiveFilter(item.index);
+        // setActiveFilter(item.index);
     };
+
+    useEffect(() => {
+        console.log(activeFilter);
+    });
 
     return (
         <div className="home_content">
@@ -89,18 +63,16 @@ export default function HomePageContent() {
                 </div>
             </div>
             <div className="list_course_items">
-                {ListCourses.map((item, index) => (
-                    <div key={index} className="course_item pointer">
-                        <div className="course_item_illust relative">
-                            <Image src={item.img} alt="" fill></Image>
-                        </div>
-                        <div className="course_item_desc">
-                            <span className="text_p3_regular color_text_dark">- {moment(item.time).format("H [h] m [min]")}</span>
-                            <span className="text_h3_semibold color_text_dark_172239">{item.name}</span>
-                            <span className="text_p3_regular color_text_dark">{item.desc}</span>
-                        </div>
+                <div className="course_item pointer">
+                    <div className="course_item_illust relative">
+                        <Image src={"/courses-img-1.svg"} alt="" fill></Image>
                     </div>
-                ))}
+                    <div className="course_item_desc">
+                        <span className="text_p3_regular color_text_dark">- 3 h 15 min</span>
+                        <span className="text_h3_semibold color_text_dark_172239">JavaScript</span>
+                        <span className="text_p3_regular color_text_dark">Advanced web applications.</span>
+                    </div>
+                </div>
             </div>
         </div>
     );

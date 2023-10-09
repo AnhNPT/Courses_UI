@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Category from "@/public/category";
-import Heart from "@/public/heart";
-import Discover from "@/public/discover";
-import Stars from "@/public/stars";
+import Category from "@/public/ImageComponents/category";
+import Heart from "@/public/ImageComponents/heart";
+import Discover from "@/public/ImageComponents/discover";
+import Stars from "@/public/ImageComponents/stars";
 import moment from "moment";
 import { FilterCourses } from "@/src/enum/EnumHomePageFilter";
 import { IFilterCourses, IListCourses } from "@/src/interface/PageInterface";

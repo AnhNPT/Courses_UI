@@ -66,6 +66,7 @@ export default function LeftSidebar() {
                         <Image src={"/arr-right.svg"} width={16} height={16} alt=""></Image>
                     </button>
                 </div>
+                <div className="log_out color_text_dark_172239 text_h3_semibold">Logout</div>
             </div>
         </>
     );

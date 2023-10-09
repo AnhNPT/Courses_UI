@@ -18,19 +18,19 @@ const ListCourses: IListCourses[] = [
         desc: "Advanced web applications.",
     },
     {
-        img: "/courses-img-1.svg",
+        img: "/courses-img-2.svg",
         time: "2023-10-07T15:45:00Z",
         name: "PowerPoint",
         desc: "Enhance your presentation skills.",
     },
     {
-        img: "/courses-img-1.svg",
+        img: "/courses-img-3.svg",
         time: "2023-10-07T15:45:00Z",
         name: "Data Science",
         desc: "Analyze the data like a pro.",
     },
     {
-        img: "/courses-img-1.svg",
+        img: "/courses-img-4.svg",
         time: "2023-10-07T15:45:00Z",
         name: "Digital Design",
         desc: "Learn the basics of the design.",
@@ -38,27 +38,27 @@ const ListCourses: IListCourses[] = [
 ];
 
 export default function HomePageContent() {
-    const [activeFilter, setActiveFilter] = useState<number>(0);
+    const [activeFilter, setActiveFilter] = useState<string>(FilterCourses.NEW);
     const FilterCoursesTab: IFilterCourses[] = [
         {
             index: 0,
-            img: <Category fill={activeFilter === 0 ? "#fff" : ""} />,
-            name: "New",
+            img: <Category fill={activeFilter === FilterCourses.NEW ? "#fff" : ""} />,
+            name: FilterCourses.NEW,
         },
         {
             index: 1,
-            img: <Stars fill={activeFilter === 1 ? "#fff" : ""} />,
-            name: "Popular",
+            img: <Stars fill={activeFilter === FilterCourses.POPULAR ? "#fff" : ""} />,
+            name: FilterCourses.POPULAR,
         },
         {
             index: 2,
-            img: <Heart fill={activeFilter === 2 ? "#fff" : ""} />,
-            name: "Free",
+            img: <Heart fill={activeFilter === FilterCourses.FREE ? "#fff" : ""} />,
+            name: FilterCourses.FREE,
         },
         {
             index: 3,
-            img: <Discover fill={activeFilter === 3 ? "#fff" : ""} />,
-            name: "Pro",
+            img: <Discover fill={activeFilter === FilterCourses.PRO ? "#fff" : ""} />,
+            name: FilterCourses.PRO,
         },
     ];
 
@@ -66,7 +66,7 @@ export default function HomePageContent() {
 
     const handleSelectFilterCourses = (item: IFilterCourses) => () => {
         setFilterCourses(item);
-        setActiveFilter(item.index);
+        setActiveFilter(item.name);
     };
 
     return (

@@ -11,6 +11,11 @@ button {
     cursor: pointer;
 }
 
+@mixin commonBorder {
+    border: 1px solid $color_light_EAEAEA;
+    border-radius: 99px;
+}
+
 $color_primary: #ffdfd6;
 $color_secondary: #52c3ff;
 $color_teriary: #ffcb57;

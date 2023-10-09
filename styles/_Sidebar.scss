@@ -9,6 +9,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 24px;
+        @include commonBorder;
         .user_info {
             display: flex;
             flex-direction: column;
@@ -20,6 +21,7 @@
         flex-direction: column;
         gap: 32px;
         padding: 32px;
+        @include commonBorder;
         .menu_item {
             display: flex;
             align-items: center;
@@ -42,6 +44,7 @@
         gap: 24px;
         padding: 32px;
         align-items: center;
+        @include commonBorder;
         > div {
             gap: 8px;
         }
@@ -53,6 +56,13 @@
                 width: 144px;
             }
         }
+    }
+    .log_out {
+        padding: 16px 0px;
+        background-color: transparent;
+        cursor: pointer;
+        text-align: center;
+        @include commonBorder;
     }
 }
 

@@ -42,6 +42,8 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 32px;
+        max-height: 700px;
+        overflow-y: auto;
         .course_item {
             .course_item_illust {
                 min-height: 137px;

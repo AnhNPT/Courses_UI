@@ -1,3 +1,4 @@
+import SlideShow from "@/components/Shared/Slideshow";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,7 +9,13 @@ export const metadata: Metadata = {
 export default function Login() {
     return (
         <>
-            <div>Login !!!!!!</div>
+            <div className="content_container d_flex justify_between">
+                <SlideShow autoStart={true} delay={3000}>
+                    <div>abc</div>
+                    <div>abc2</div>
+                    <div>abc3</div>
+                </SlideShow>
+            </div>
         </>
     );
 }

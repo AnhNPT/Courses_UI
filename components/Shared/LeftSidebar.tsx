@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import Button from "../ReactComponents/Button";
 
 interface IMenuItems {
     id: number;
@@ -61,12 +62,12 @@ export default function LeftSidebar() {
                             Become a <b className="color_text_dark_172239">Pro</b> member today and save more than <b className="color_text_dark_172239">75%.</b>
                         </span>
                     </div>
-                    <button className="see_deals d_flex items_center" type="button">
+                    <Button buttonProps={{ className: "see_deals d_flex items_center", type: "button" }}>
                         <span className="text_h3_semibold color_text_dark_172239">See Deal</span>
                         <Image src={"/arr-right.svg"} width={16} height={16} alt=""></Image>
-                    </button>
+                    </Button>
                 </div>
-                <div className="log_out color_text_dark_172239 text_h3_semibold">Logout</div>
+                <Button buttonProps={{ className: "log_out color_text_dark_172239 text_h3_semibold", type: "button" }}>Logout</Button>
             </div>
         </>
     );

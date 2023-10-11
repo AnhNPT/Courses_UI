@@ -16,7 +16,7 @@
                 flex-direction: column;
                 gap: 16px;
                 padding: 10px 10px 20px 10px;
-                border-radius: 99px;
+                border-radius: 40px;
                 border: 2px solid transparent;
                 align-items: center;
                 transition: border-color 0.3s ease;
@@ -51,14 +51,20 @@
                 border-top-right-radius: 20px;
                 border-top-left-radius: 20px;
             }
-            .course_item_desc {
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-                border: 1px solid $color_light_EAEAEA;
-                border-radius: 32px;
-                padding: 24px;
-            }
         }
+    }
+}
+
+.course_item_desc {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid $color_light_EAEAEA;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    padding: 24px;
+    &.right_sidebar {
+        border: none;
+        padding: 0;
     }
 }

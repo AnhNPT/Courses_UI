@@ -1,0 +1,32 @@
+.slider_wrapper {
+    width: 100%;
+    max-width: 624px;
+    @include commonBorder;
+    border-radius: 64px;
+    margin: 0 !important;
+    padding: 186px 0 144px 0 !important;
+    .swiper_content {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+        align-items: center;
+        &_text {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            width: 100%;
+            max-width: 336px;
+        }
+    }
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 61px !important;
+}
+
+.swiper-button-prev {
+}
